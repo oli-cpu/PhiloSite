@@ -1,738 +1,1213 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Philosophie Abzeichen · Zeitstrahl der Denker</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --antike: #d4580a;
-      --antike-light: #fff3e8;
-      --antike-mid: #f5a96a;
-      --mittelalter: #6b3fa0;
-      --mittelalter-light: #f3ecff;
-      --mittelalter-mid: #c09ee0;
-      --moderne: #1a7a4a;
-      --moderne-light: #e8f7ef;
-      --moderne-mid: #7ecfa1;
-      --postmoderne: #c0156a;
-      --postmoderne-light: #fce8f3;
-      --postmoderne-mid: #e88ac0;
-      --bg: #faf8f3;
-      --text: #1a1410;
-      --muted: #6b5c4a;
-      --card-bg: #fff;
-      --border: rgba(0, 0, 0, 0.09);
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philosophie Abzeichen · Zeitstrahl der Denker & große Gedanken</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --antike: #d4580a;
+            --antike-light: #fff3e8;
+            --antike-mid: #f5a96a;
+            --mittelalter: #6b3fa0;
+            --mittelalter-light: #f3ecff;
+            --mittelalter-mid: #c09ee0;
+            --moderne: #1a7a4a;
+            --moderne-light: #e8f7ef;
+            --moderne-mid: #7ecfa1;
+            --postmoderne: #c0156a;
+            --postmoderne-light: #fce8f3;
+            --postmoderne-mid: #e88ac0;
+            --bg: #faf8f3;
+            --text: #1a1410;
+            --muted: #6b5c4a;
+            --card-bg: #fff;
+            --border: rgba(0, 0, 0, 0.09);
+            --accent-gold: #b8860b;
+            --glossar-bg: #fdfaf3;
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    body {
-      font-family: 'Source Serif 4', Georgia, serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      line-height: 1.5;
-    }
+        body {
+            font-family: 'Source Serif 4', Georgia, serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
 
-    /* HERO */
-    .hero {
-      background: #1a1410;
-      color: #f5e8cc;
-      padding: 3rem 2rem 2.2rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(45deg,
-          transparent,
-          transparent 40px,
-          rgba(255, 255, 255, 0.015) 40px,
-          rgba(255, 255, 255, 0.015) 80px);
-      pointer-events: none;
-    }
-    .hero-badge {
-      display: inline-block;
-      border: 1.5px solid rgba(245, 232, 204, 0.4);
-      color: rgba(245, 232, 204, 0.75);
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      padding: 0.35rem 1.2rem;
-      border-radius: 30px;
-      margin-bottom: 1.4rem;
-      backdrop-filter: blur(4px);
-    }
-    .hero h1 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(2.5rem, 6vw, 4rem);
-      font-weight: 900;
-      line-height: 1.1;
-      margin-bottom: 0.7rem;
-      letter-spacing: -0.02em;
-    }
-    .hero p {
-      font-size: 1.1rem;
-      color: rgba(245, 232, 204, 0.7);
-      max-width: 600px;
-      margin: 0 auto;
-      font-weight: 300;
-      font-style: italic;
-      line-height: 1.6;
-    }
+        /* HERO */
+        .hero {
+            background: #1a1410;
+            color: #f5e8cc;
+            padding: 3rem 2rem 2.2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(45deg,
+                    transparent,
+                    transparent 40px,
+                    rgba(255, 255, 255, 0.015) 40px,
+                    rgba(255, 255, 255, 0.015) 80px);
+            pointer-events: none;
+        }
+        .hero-badge {
+            display: inline-block;
+            border: 1.5px solid rgba(245, 232, 204, 0.4);
+            color: rgba(245, 232, 204, 0.75);
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 0.35rem 1.2rem;
+            border-radius: 30px;
+            margin-bottom: 1.4rem;
+            backdrop-filter: blur(4px);
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 0.7rem;
+            letter-spacing: -0.02em;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: rgba(245, 232, 204, 0.7);
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+            font-style: italic;
+            line-height: 1.6;
+        }
 
-    /* ========== ZEITSTRAHL (PROMINENT) ========== */
-    .timeline-container {
-      background: #1a1410;
-      padding: 1.8rem 1.5rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 120;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
+        /* ========== GLOSSAR: PHILOSOPHISCHE GEDANKEN ========== */
+        .glossar-container {
+            max-width: 1150px;
+            margin: 2.5rem auto 1.5rem;
+            padding: 0 1.8rem;
+        }
+        .glossar-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 0.4rem;
+            color: #1a1410;
+            letter-spacing: -0.02em;
+        }
+        .glossar-subtitle {
+            text-align: center;
+            font-style: italic;
+            color: var(--muted);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+        .glossar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.2rem;
+        }
+        .glossar-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.5rem 1.6rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+            overflow: hidden;
+            cursor: default;
+        }
+        .glossar-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+        }
+        .glossar-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+        }
+        .glossar-card.stoa::before {
+            background: #d4580a;
+        }
+        .glossar-card.epikur::before {
+            background: #c0156a;
+        }
+        .glossar-card.skepsis::before {
+            background: #6b3fa0;
+        }
+        .glossar-card.rational::before {
+            background: #1a7a4a;
+        }
+        .glossar-card.empirie::before {
+            background: #b8860b;
+        }
+        .glossar-card.ideal::before {
+            background: #2c5f8a;
+        }
+        .glossar-card.existenz::before {
+            background: #8b1a1a;
+        }
+        .glossar-card.util::before {
+            background: #3d7a5c;
+        }
+        .glossar-card.nihil::before {
+            background: #4a4a4a;
+        }
+        .glossar-card.phänomen::before {
+            background: #5c3d6e;
+        }
+        .glossar-card.kritisch::before {
+            background: #b85c1a;
+        }
+        .glossar-card.dekon::before {
+            background: #7a2060;
+        }
+        .glossar-card-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.35rem;
+            color: #1a1410;
+        }
+        .glossar-card-subtitle {
+            font-size: 0.8rem;
+            color: var(--muted);
+            font-style: italic;
+            margin-bottom: 0.9rem;
+        }
+        .glossar-card-desc {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #4a3c2e;
+        }
+        .glossar-card-keyword {
+            display: inline-block;
+            font-size: 0.72rem;
+            padding: 0.18rem 0.65rem;
+            border-radius: 20px;
+            margin-top: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+        }
+        .glossar-card.stoa .glossar-card-keyword {
+            background: #fff3e8;
+            color: #d4580a;
+        }
+        .glossar-card.epikur .glossar-card-keyword {
+            background: #fce8f3;
+            color: #c0156a;
+        }
+        .glossar-card.skepsis .glossar-card-keyword {
+            background: #f3ecff;
+            color: #6b3fa0;
+        }
+        .glossar-card.rational .glossar-card-keyword {
+            background: #e8f7ef;
+            color: #1a7a4a;
+        }
+        .glossar-card.empirie .glossar-card-keyword {
+            background: #fef9ee;
+            color: #b8860b;
+        }
+        .glossar-card.ideal .glossar-card-keyword {
+            background: #e8f0f8;
+            color: #2c5f8a;
+        }
+        .glossar-card.existenz .glossar-card-keyword {
+            background: #fde8e8;
+            color: #8b1a1a;
+        }
+        .glossar-card.util .glossar-card-keyword {
+            background: #e8f7ef;
+            color: #3d7a5c;
+        }
+        .glossar-card.nihil .glossar-card-keyword {
+            background: #f0f0f0;
+            color: #4a4a4a;
+        }
+        .glossar-card.phänomen .glossar-card-keyword {
+            background: #f3ecfa;
+            color: #5c3d6e;
+        }
+        .glossar-card.kritisch .glossar-card-keyword {
+            background: #fef3e8;
+            color: #b85c1a;
+        }
+        .glossar-card.dekon .glossar-card-keyword {
+            background: #fce8f5;
+            color: #7a2060;
+        }
 
-    .timeline-bar {
-      display: flex;
-      align-items: center;
-      height: 28px;
-      border-radius: 14px;
-      overflow: hidden;
-      max-width: 1000px;
-      margin: 0 auto 0.8rem;
-      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.5), 0 2px 10px rgba(0, 0, 0, 0.3);
-      cursor: pointer;
-    }
+        /* ========== ZEITSTRAHL ========== */
+        .timeline-container {
+            background: #1a1410;
+            padding: 1.8rem 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 120;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .timeline-bar {
+            display: flex;
+            align-items: center;
+            height: 28px;
+            border-radius: 14px;
+            overflow: hidden;
+            max-width: 1000px;
+            margin: 0 auto 0.8rem;
+            box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.5), 0 2px 10px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+        }
+        .timeline-segment {
+            flex: 1;
+            height: 100%;
+            transition: all 0.3s ease;
+            position: relative;
+            opacity: 0.75;
+            border-right: 2px solid rgba(0, 0, 0, 0.3);
+        }
+        .timeline-segment:last-child {
+            border-right: none;
+        }
+        .timeline-segment:hover {
+            opacity: 1;
+            filter: brightness(1.2);
+            flex-grow: 1.3;
+        }
+        .timeline-segment.active {
+            opacity: 1;
+            filter: brightness(1.15);
+            box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.7), 0 0 15px currentColor;
+            flex-grow: 1.4;
+        }
+        .seg-antike {
+            background: var(--antike);
+            flex: 3;
+        }
+        .seg-mittelalter {
+            background: var(--mittelalter);
+            flex: 2.2;
+        }
+        .seg-moderne {
+            background: var(--moderne);
+            flex: 2.5;
+        }
+        .seg-postmoderne {
+            background: var(--postmoderne);
+            flex: 2;
+        }
+        .timeline-labels {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 5px;
+        }
+        .timeline-label {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: rgba(245, 232, 204, 0.55);
+            letter-spacing: 0.04em;
+            text-align: center;
+            transition: color 0.3s;
+            cursor: pointer;
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
+        }
+        .timeline-label:hover {
+            color: rgba(245, 232, 204, 0.9);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .timeline-label.active {
+            color: #f5e8cc;
+            background: rgba(255, 255, 255, 0.1);
+            font-weight: 900;
+        }
+        .timeline-label .label-era {
+            display: block;
+            line-height: 1.2;
+        }
+        .timeline-label .label-years {
+            font-size: 0.7rem;
+            font-weight: 400;
+            opacity: 0.7;
+            font-style: italic;
+        }
+        .era-nav {
+            display: flex;
+            background: #f0ece3;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 120px;
+            z-index: 90;
+            backdrop-filter: blur(8px);
+            background: rgba(250, 248, 243, 0.9);
+        }
+        .era-btn {
+            flex: 1;
+            padding: 0.8rem 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-family: 'Playfair Display', serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--muted);
+            background: transparent;
+            transition: all 0.25s;
+            letter-spacing: 0.03em;
+            border-bottom: 3px solid transparent;
+        }
+        .era-btn:hover {
+            color: var(--text);
+        }
+        .era-btn.active {
+            color: var(--text);
+            background: rgba(255, 255, 255, 0.6);
+        }
+        .era-btn[data-era="antike"].active {
+            border-bottom-color: var(--antike);
+        }
+        .era-btn[data-era="mittelalter"].active {
+            border-bottom-color: var(--mittelalter-mid);
+        }
+        .era-btn[data-era="moderne"].active {
+            border-bottom-color: var(--moderne);
+        }
+        .era-btn[data-era="postmoderne"].active {
+            border-bottom-color: var(--postmoderne);
+        }
 
-    .timeline-segment {
-      flex: 1;
-      height: 100%;
-      transition: all 0.3s ease;
-      position: relative;
-      opacity: 0.75;
-      border-right: 2px solid rgba(0, 0, 0, 0.3);
-    }
-    .timeline-segment:last-child {
-      border-right: none;
-    }
-    .timeline-segment:hover {
-      opacity: 1;
-      filter: brightness(1.2);
-      flex-grow: 1.3;
-    }
-    .timeline-segment.active {
-      opacity: 1;
-      filter: brightness(1.15);
-      box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.7), 0 0 15px currentColor;
-      flex-grow: 1.4;
-    }
+        /* SECTIONS */
+        .section {
+            display: none;
+            padding: 2.8rem 1.8rem 4rem;
+            max-width: 1150px;
+            margin: 0 auto;
+        }
+        .section.active {
+            display: block;
+        }
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            gap: 1.2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border);
+            flex-wrap: wrap;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+        }
+        .section-years {
+            font-size: 0.95rem;
+            color: var(--muted);
+            font-style: italic;
+        }
+        .antike .section-title {
+            color: var(--antike);
+        }
+        .mittelalter .section-title {
+            color: var(--mittelalter);
+        }
+        .moderne .section-title {
+            color: var(--moderne);
+        }
+        .postmoderne .section-title {
+            color: var(--postmoderne);
+        }
+        .group {
+            margin-bottom: 2.8rem;
+        }
+        .group-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--muted);
+            margin-bottom: 1rem;
+            padding-left: 3px;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-weight: 600;
+        }
+        .group-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+            gap: 1.1rem;
+        }
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.2rem 1.3rem;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            opacity: 0;
+            transition: opacity 0.25s;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+        }
+        .card:hover::before {
+            opacity: 1;
+        }
+        .antike .card::before {
+            background: var(--antike);
+        }
+        .mittelalter .card::before {
+            background: var(--mittelalter);
+        }
+        .moderne .card::before {
+            background: var(--moderne);
+        }
+        .postmoderne .card::before {
+            background: var(--postmoderne);
+        }
+        .card-dates {
+            font-size: 0.75rem;
+            color: var(--muted);
+            margin-bottom: 0.3rem;
+            font-style: italic;
+        }
+        .card-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+        .card-concept {
+            font-size: 0.78rem;
+            display: inline-block;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            font-weight: 500;
+            margin-bottom: 0.7rem;
+            font-style: italic;
+            letter-spacing: 0.01em;
+        }
+        .antike .card-concept {
+            background: var(--antike-light);
+            color: var(--antike);
+        }
+        .mittelalter .card-concept {
+            background: var(--mittelalter-light);
+            color: var(--mittelalter);
+        }
+        .moderne .card-concept {
+            background: var(--moderne-light);
+            color: var(--moderne);
+        }
+        .postmoderne .card-concept {
+            background: var(--postmoderne-light);
+            color: var(--postmoderne);
+        }
+        .card-desc {
+            font-size: 0.86rem;
+            line-height: 1.6;
+            color: #4a3c2e;
+        }
+        .card-expand {
+            margin-top: 0.9rem;
+            padding-top: 0.9rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.85rem;
+            line-height: 1.7;
+            color: #4a3c2e;
+            display: none;
+        }
+        .card.open .card-expand {
+            display: block;
+        }
+        .card-toggle {
+            margin-top: 0.8rem;
+            font-size: 0.75rem;
+            color: var(--muted);
+            text-align: right;
+            user-select: none;
+            font-weight: 600;
+        }
+        .card.open .card-toggle-more {
+            display: none;
+        }
+        .card:not(.open) .card-toggle-less {
+            display: none;
+        }
+        .overview-bar {
+            background: #f0ece3;
+            border-radius: 12px;
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 2.2rem;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #4a3c2e;
+            border-left: 5px solid;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        }
+        .antike .overview-bar {
+            border-color: var(--antike);
+        }
+        .mittelalter .overview-bar {
+            border-color: var(--mittelalter);
+        }
+        .moderne .overview-bar {
+            border-color: var(--moderne);
+        }
+        .postmoderne .overview-bar {
+            border-color: var(--postmoderne);
+        }
+        footer {
+            text-align: center;
+            padding: 2.2rem;
+            font-size: 0.82rem;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+            font-style: italic;
+            background: #fff;
+        }
 
-    .seg-antike {
-      background: var(--antike);
-      flex: 3;
-    }
-    .seg-mittelalter {
-      background: var(--mittelalter);
-      flex: 2.2;
-    }
-    .seg-moderne {
-      background: var(--moderne);
-      flex: 2.5;
-    }
-    .seg-postmoderne {
-      background: var(--postmoderne);
-      flex: 2;
-    }
-
-    .timeline-labels {
-      display: flex;
-      justify-content: space-between;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 5px;
-    }
-    .timeline-label {
-      font-family: 'Playfair Display', serif;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: rgba(245, 232, 204, 0.55);
-      letter-spacing: 0.04em;
-      text-align: center;
-      transition: color 0.3s;
-      cursor: pointer;
-      padding: 0.3rem 0.6rem;
-      border-radius: 20px;
-    }
-    .timeline-label:hover {
-      color: rgba(245, 232, 204, 0.9);
-      background: rgba(255, 255, 255, 0.05);
-    }
-    .timeline-label.active {
-      color: #f5e8cc;
-      background: rgba(255, 255, 255, 0.1);
-      font-weight: 900;
-    }
-    .timeline-label .label-era {
-      display: block;
-      line-height: 1.2;
-    }
-    .timeline-label .label-years {
-      font-size: 0.7rem;
-      font-weight: 400;
-      opacity: 0.7;
-      font-style: italic;
-    }
-
-    /* ERA NAV (sekundär, dezent) */
-    .era-nav {
-      display: flex;
-      background: #f0ece3;
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 120px;
-      z-index: 90;
-      backdrop-filter: blur(8px);
-      background: rgba(250, 248, 243, 0.9);
-    }
-    .era-btn {
-      flex: 1;
-      padding: 0.8rem 0.5rem;
-      border: none;
-      cursor: pointer;
-      font-family: 'Playfair Display', serif;
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--muted);
-      background: transparent;
-      transition: all 0.25s;
-      letter-spacing: 0.03em;
-      border-bottom: 3px solid transparent;
-    }
-    .era-btn:hover {
-      color: var(--text);
-    }
-    .era-btn.active {
-      color: var(--text);
-      background: rgba(255, 255, 255, 0.6);
-    }
-    .era-btn[data-era="antike"].active {
-      border-bottom-color: var(--antike);
-    }
-    .era-btn[data-era="mittelalter"].active {
-      border-bottom-color: var(--mittelalter-mid);
-    }
-    .era-btn[data-era="moderne"].active {
-      border-bottom-color: var(--moderne);
-    }
-    .era-btn[data-era="postmoderne"].active {
-      border-bottom-color: var(--postmoderne);
-    }
-
-    /* SECTIONS */
-    .section {
-      display: none;
-      padding: 2.8rem 1.8rem 4rem;
-      max-width: 1150px;
-      margin: 0 auto;
-    }
-    .section.active {
-      display: block;
-    }
-
-    .section-header {
-      display: flex;
-      align-items: baseline;
-      gap: 1.2rem;
-      margin-bottom: 2rem;
-      padding-bottom: 1rem;
-      border-bottom: 2px solid var(--border);
-      flex-wrap: wrap;
-    }
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.4rem;
-      font-weight: 900;
-      letter-spacing: -0.02em;
-    }
-    .section-years {
-      font-size: 0.95rem;
-      color: var(--muted);
-      font-style: italic;
-    }
-    .antike .section-title {
-      color: var(--antike);
-    }
-    .mittelalter .section-title {
-      color: var(--mittelalter);
-    }
-    .moderne .section-title {
-      color: var(--moderne);
-    }
-    .postmoderne .section-title {
-      color: var(--postmoderne);
-    }
-
-    /* GROUPS */
-    .group {
-      margin-bottom: 2.8rem;
-    }
-    .group-label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--muted);
-      margin-bottom: 1rem;
-      padding-left: 3px;
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      font-weight: 600;
-    }
-    .group-label::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
-
-    /* CARDS GRID */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-      gap: 1.1rem;
-    }
-
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.2rem 1.3rem;
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    }
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      opacity: 0;
-      transition: opacity 0.25s;
-    }
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
-    }
-    .card:hover::before {
-      opacity: 1;
-    }
-
-    .antike .card::before {
-      background: var(--antike);
-    }
-    .mittelalter .card::before {
-      background: var(--mittelalter);
-    }
-    .moderne .card::before {
-      background: var(--moderne);
-    }
-    .postmoderne .card::before {
-      background: var(--postmoderne);
-    }
-
-    .card-dates {
-      font-size: 0.75rem;
-      color: var(--muted);
-      margin-bottom: 0.3rem;
-      font-style: italic;
-    }
-    .card-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 0.5rem;
-    }
-    .card-concept {
-      font-size: 0.78rem;
-      display: inline-block;
-      padding: 0.2rem 0.7rem;
-      border-radius: 20px;
-      font-weight: 500;
-      margin-bottom: 0.7rem;
-      font-style: italic;
-      letter-spacing: 0.01em;
-    }
-    .antike .card-concept {
-      background: var(--antike-light);
-      color: var(--antike);
-    }
-    .mittelalter .card-concept {
-      background: var(--mittelalter-light);
-      color: var(--mittelalter);
-    }
-    .moderne .card-concept {
-      background: var(--moderne-light);
-      color: var(--moderne);
-    }
-    .postmoderne .card-concept {
-      background: var(--postmoderne-light);
-      color: var(--postmoderne);
-    }
-
-    .card-desc {
-      font-size: 0.86rem;
-      line-height: 1.6;
-      color: #4a3c2e;
-    }
-
-    .card-expand {
-      margin-top: 0.9rem;
-      padding-top: 0.9rem;
-      border-top: 1px solid var(--border);
-      font-size: 0.85rem;
-      line-height: 1.65;
-      color: #4a3c2e;
-      display: none;
-    }
-    .card.open .card-expand {
-      display: block;
-    }
-    .card-toggle {
-      margin-top: 0.8rem;
-      font-size: 0.75rem;
-      color: var(--muted);
-      text-align: right;
-      user-select: none;
-    }
-    .card.open .card-toggle-more {
-      display: none;
-    }
-    .card:not(.open) .card-toggle-less {
-      display: none;
-    }
-
-    /* OVERVIEW */
-    .overview-bar {
-      background: #f0ece3;
-      border-radius: 12px;
-      padding: 1.2rem 1.5rem;
-      margin-bottom: 2.2rem;
-      font-size: 0.9rem;
-      line-height: 1.7;
-      color: #4a3c2e;
-      border-left: 5px solid;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-    }
-    .antike .overview-bar {
-      border-color: var(--antike);
-    }
-    .mittelalter .overview-bar {
-      border-color: var(--mittelalter);
-    }
-    .moderne .overview-bar {
-      border-color: var(--moderne);
-    }
-    .postmoderne .overview-bar {
-      border-color: var(--postmoderne);
-    }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 2.2rem;
-      font-size: 0.82rem;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
-      font-style: italic;
-      background: #fff;
-    }
-
-    @media (max-width: 700px) {
-      .hero {
-        padding: 2rem 1rem 1.5rem;
-      }
-      .timeline-container {
-        padding: 1rem 0.8rem 1.2rem;
-      }
-      .timeline-bar {
-        height: 20px;
-        border-radius: 10px;
-      }
-      .timeline-label {
-        font-size: 0.72rem;
-      }
-      .timeline-label .label-years {
-        font-size: 0.65rem;
-      }
-      .era-nav {
-        top: 90px;
-      }
-      .era-btn {
-        font-size: 0.72rem;
-        padding: 0.6rem 0.3rem;
-      }
-      .cards {
-        grid-template-columns: 1fr 1fr;
-      }
-      .section {
-        padding: 1.8rem 1rem 3rem;
-      }
-    }
-    @media (max-width: 450px) {
-      .cards {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+        @media (max-width: 700px) {
+            .hero {
+                padding: 2rem 1rem 1.5rem;
+            }
+            .glossar-grid {
+                grid-template-columns: 1fr;
+            }
+            .timeline-container {
+                padding: 1rem 0.8rem 1.2rem;
+            }
+            .timeline-bar {
+                height: 20px;
+                border-radius: 10px;
+            }
+            .timeline-label {
+                font-size: 0.72rem;
+            }
+            .era-nav {
+                top: 90px;
+            }
+            .era-btn {
+                font-size: 0.72rem;
+                padding: 0.6rem 0.3rem;
+            }
+            .cards {
+                grid-template-columns: 1fr 1fr;
+            }
+            .section {
+                padding: 1.8rem 1rem 3rem;
+            }
+        }
+        @media (max-width: 450px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
+            .glossar-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <header class="hero">
-    <div class="hero-badge">Güetli Philosophie Spezex</div>
-    <h1>Geschichte der Philosophie</h1>
-    <p>Von den Vorsokratikern bis zur Postmoderne – ein interaktiver Überblick über 2600 Jahre Denken.</p>
-  </header>
+    <header class="hero">
+        <div class="hero-badge">Güetli Philosophie Spezex</div>
+        <h1>Geschichte der Philosophie</h1>
+        <p>Von den Vorsokratikern bis zur Postmoderne – ein interaktiver Überblick über 2600 Jahre Denken, inklusive der großen philosophischen Strömungen.</p>
+    </header>
 
-  <!-- ========== PROMINENTER ZEITSTRAHL ========== -->
-  <div class="timeline-container" id="timelineContainer">
-    <div class="timeline-bar" id="timelineBar">
-      <div class="timeline-segment seg-antike active" data-era="antike" title="Antike · 600 v.Chr.–400 n.Chr."></div>
-      <div class="timeline-segment seg-mittelalter" data-era="mittelalter" title="Mittelalter · 400–1500"></div>
-      <div class="timeline-segment seg-moderne" data-era="moderne" title="Moderne · 1500–1945"></div>
-      <div class="timeline-segment seg-postmoderne" data-era="postmoderne" title="Postmoderne · ab 1945"></div>
+    <!-- ========== GLOSSAR: WICHTIGSTE PHILOSOPHISCHE GEDANKEN ========== -->
+    <div class="glossar-container" id="glossar">
+        <h2 class="glossar-title">Philosophische Gedanken im Fokus</h2>
+        <p class="glossar-subtitle">Die wichtigsten Strömungen und ihre Kernideen – von der Antike bis heute</p>
+        <div class="glossar-grid">
+            <!-- Stoizismus -->
+            <div class="glossar-card stoa">
+                <div class="glossar-card-name">Stoizismus</div>
+                <div class="glossar-card-subtitle">Zenon von Kition, Seneca, Epiktet, Marc Aurel · ab 300 v.Chr.</div>
+                <div class="glossar-card-desc">
+                    Der Stoizismus lehrt, dass <strong>Tugend das einzige wahre Gut</strong> ist. Äußere Umstände – Reichtum, Gesundheit, Ansehen – sind bedeutungslos für das wahre Glück. Die zentrale Einsicht: <em>Manche Dinge liegen in unserer Macht, andere nicht.</em> Wahre Freiheit entsteht, wenn wir nur das kontrollieren, was wir wirklich beeinflussen können – unsere Urteile, Einstellungen und Handlungen. Das stoische Ideal ist die <strong>Ataraxia</strong>, die unerschütterliche Seelenruhe.
+                </div>
+                <span class="glossar-card-keyword">Tugend · Akzeptanz · Seelenruhe</span>
+            </div>
+            <!-- Epikureismus -->
+            <div class="glossar-card epikur">
+                <div class="glossar-card-name">Epikureismus</div>
+                <div class="glossar-card-subtitle">Epikur · 341–270 v.Chr.</div>
+                <div class="glossar-card-desc">
+                    Epikur wird oft missverstanden: Es geht nicht um hemmungslosen Genuss, sondern um <strong>die Abwesenheit von Schmerz und Angst</strong>. Höchstes Ziel ist die <em>Ataraxia</em> (Seelenruhe) – erreicht durch bescheidene Freuden, Freundschaft und das Loslassen irrationaler Ängste, besonders der Angst vor dem Tod. Sein berühmtes Argument: <em>»Wenn ich da bin, ist der Tod nicht da; wenn der Tod da ist, bin ich nicht da.«</em>
+                </div>
+                <span class="glossar-card-keyword">Lust · Seelenruhe · Freundschaft</span>
+            </div>
+            <!-- Skeptizismus -->
+            <div class="glossar-card skepsis">
+                <div class="glossar-card-name">Skeptizismus</div>
+                <div class="glossar-card-subtitle">Pyrrhon, Sextus Empiricus · ab 300 v.Chr.</div>
+                <div class="glossar-card-desc">
+                    Der philosophische Skeptizismus bezweifelt, dass wir jemals <strong>sicheres Wissen</strong> über die Welt erlangen können. Pyrrhon von Elis lehrte, dass jedes Argument ein gleich starkes Gegenargument hat. Die radikale Konsequenz: <em>Urteilsenthaltung (Epoché)</em> führt zur inneren Ruhe. Wer nichts für endgültig wahr hält, leidet nicht an falschen Überzeugungen.
+                </div>
+                <span class="glossar-card-keyword">Zweifel · Urteilsenthaltung · Gelassenheit</span>
+            </div>
+            <!-- Rationalismus -->
+            <div class="glossar-card rational">
+                <div class="glossar-card-name">Rationalismus</div>
+                <div class="glossar-card-subtitle">Descartes, Spinoza, Leibniz · 17. Jh.</div>
+                <div class="glossar-card-desc">
+                    Der Rationalismus setzt auf die <strong>Vernunft als primäre Erkenntnisquelle</strong>. Wissen entsteht nicht aus den Sinnen, die uns täuschen können, sondern aus logischem Denken und angeborenen Ideen. Descartes' radikaler Zweifel (»Was kann ich sicher wissen?«) führte zum berühmten Fundament: <em>»Cogito, ergo sum«</em> – Ich denke, also bin ich.
+                </div>
+                <span class="glossar-card-keyword">Vernunft · Angeborene Ideen · Logik</span>
+            </div>
+            <!-- Empirismus -->
+            <div class="glossar-card empirie">
+                <div class="glossar-card-name">Empirismus</div>
+                <div class="glossar-card-subtitle">Locke, Berkeley, Hume · 17.–18. Jh.</div>
+                <div class="glossar-card-desc">
+                    Der Empirismus behauptet: <strong>Alles Wissen stammt aus der Erfahrung.</strong> Der Geist ist bei der Geburt ein <em>»Tabula rasa«</em>, ein leeres Blatt. Erst durch Sinneseindrücke entstehen Ideen. David Hume trieb dies auf die Spitze: Selbst Kausalität sei nur eine Gewohnheit – wir <em>sehen</em> nie Ursachen, nur regelmäßige Abfolgen von Ereignissen.
+                </div>
+                <span class="glossar-card-keyword">Erfahrung · Sinne · Induktion</span>
+            </div>
+            <!-- Deutscher Idealismus -->
+            <div class="glossar-card ideal">
+                <div class="glossar-card-name">Deutscher Idealismus</div>
+                <div class="glossar-card-subtitle">Kant, Fichte, Schelling, Hegel · 18.–19. Jh.</div>
+                <div class="glossar-card-desc">
+                    Der Idealismus fragt: Wie formt unser <strong>Bewusstsein die Wirklichkeit</strong>? Kant vollzog die »kopernikanische Wende«: Nicht unser Denken richtet sich nach den Dingen, sondern die Dinge nach den Strukturen unseres Geistes. Hegel sah die gesamte Geschichte als Entfaltung des <em>Weltgeistes</em> – ein dialektischer Prozess von These, Antithese und Synthese.
+                </div>
+                <span class="glossar-card-keyword">Geist · Dialektik · Kategorischer Imperativ</span>
+            </div>
+            <!-- Existenzialismus -->
+            <div class="glossar-card existenz">
+                <div class="glossar-card-name">Existenzialismus</div>
+                <div class="glossar-card-subtitle">Kierkegaard, Sartre, Camus · 19.–20. Jh.</div>
+                <div class="glossar-card-desc">
+                    Der Existenzialismus stellt das <strong>konkrete, erlebende Individuum</strong> ins Zentrum. Sartres radikaler Grundsatz: <em>»Die Existenz geht der Essenz voraus.«</em> Wir werden ohne vorgegebenen Sinn geboren und müssen uns selbst entwerfen. Das ist die Last der Freiheit – wir sind zu ihr verurteilt und tragen volle Verantwortung für unsere Entscheidungen.
+                </div>
+                <span class="glossar-card-keyword">Freiheit · Verantwortung · Selbstentwurf</span>
+            </div>
+            <!-- Utilitarismus -->
+            <div class="glossar-card util">
+                <div class="glossar-card-name">Utilitarismus</div>
+                <div class="glossar-card-subtitle">Bentham, Mill · 18.–19. Jh.</div>
+                <div class="glossar-card-desc">
+                    Der Utilitarismus ist eine <strong>konsequentialistische Ethik</strong>: Eine Handlung ist moralisch richtig, wenn sie das größte Glück für die größte Zahl bewirkt. Jeremy Benthams hedonistischer Kalkül wägt Lust gegen Schmerz ab. John Stuart Mill verfeinerte das Prinzip und unterschied zwischen höheren (geistigen) und niedrigeren (körperlichen) Freuden.
+                </div>
+                <span class="glossar-card-keyword">Nutzen · Glück · Folgenethik</span>
+            </div>
+            <!-- Nihilismus -->
+            <div class="glossar-card nihil">
+                <div class="glossar-card-name">Nihilismus</div>
+                <div class="glossar-card-subtitle">Nietzsche · 19. Jh.</div>
+                <div class="glossar-card-desc">
+                    Nietzsche diagnostizierte den Nihilismus als fundamentale Krise der Moderne: <em>»Gott ist tot!«</em> – alle traditionellen Werte und Wahrheiten haben ihre Gültigkeit verloren. Doch der Nihilismus ist für Nietzsche kein Endpunkt, sondern ein notwendiger Durchgang: Der <strong>Übermensch</strong> schafft aus eigener Kraft neue Werte und bejaht das Leben in der <em>ewigen Wiederkehr</em>.
+                </div>
+                <span class="glossar-card-keyword">Werteverfall · Übermensch · Wille zur Macht</span>
+            </div>
+            <!-- Phänomenologie -->
+            <div class="glossar-card phänomen">
+                <div class="glossar-card-name">Phänomenologie</div>
+                <div class="glossar-card-subtitle">Husserl, Heidegger, Merleau-Ponty · 20. Jh.</div>
+                <div class="glossar-card-desc">
+                    Die Phänomenologie will die Dinge so beschreiben, <strong>wie sie dem Bewusstsein erscheinen</strong> – ohne theoretische Vorannahmen. Husserls Losung: <em>»Zu den Sachen selbst!«</em> Heidegger erweiterte dies zur Frage nach dem <em>Sein</em> und analysierte das menschliche <em>Dasein</em> in seiner Geworfenheit, Zeitlichkeit und Todesbewusstheit.
+                </div>
+                <span class="glossar-card-keyword">Erscheinung · Dasein · Intentionalität</span>
+            </div>
+            <!-- Kritische Theorie -->
+            <div class="glossar-card kritisch">
+                <div class="glossar-card-name">Kritische Theorie</div>
+                <div class="glossar-card-subtitle">Adorno, Horkheimer, Marcuse · 20. Jh.</div>
+                <div class="glossar-card-desc">
+                    Die Frankfurter Schule analysiert, wie Aufklärung in ihr Gegenteil umschlagen kann: Die <em>Dialektik der Aufklärung</em> zeigt, dass instrumentelle Vernunft zu Herrschaft und Barbarei führt. Adornos Diktum <em>»Nach Auschwitz ein Gedicht zu schreiben, ist barbarisch«</em> drückt die tiefe Krise des Vertrauens in Fortschritt und Kultur aus.
+                </div>
+                <span class="glossar-card-keyword">Aufklärungskritik · Kulturindustrie · Emanzipation</span>
+            </div>
+            <!-- Dekonstruktion -->
+            <div class="glossar-card dekon">
+                <div class="glossar-card-name">Dekonstruktion</div>
+                <div class="glossar-card-subtitle">Derrida · 20. Jh.</div>
+                <div class="glossar-card-desc">
+                    Derrida zeigt, dass <strong>Bedeutung nie endgültig feststeht</strong>. Jeder Text enthält innere Widersprüche, die seine scheinbare Eindeutigkeit untergraben. Der Begriff der <em>Différance</em> beschreibt das ständige Verschieben und Aufschieben von Sinn. Dekonstruktion ist keine Zerstörung, sondern eine genaue Lektüre, die verborgene Hierarchien und Ausschlüsse sichtbar macht.
+                </div>
+                <span class="glossar-card-keyword">Différance · Text · Bedeutungsoffenheit</span>
+            </div>
+        </div>
     </div>
-    <div class="timeline-labels" id="timelineLabels">
-      <div class="timeline-label active" data-era="antike">
-        <span class="label-era">Antike</span>
-        <span class="label-years">600 v.Chr.–400 n.Chr.</span>
-      </div>
-      <div class="timeline-label" data-era="mittelalter">
-        <span class="label-era">Mittelalter</span>
-        <span class="label-years">400–1500</span>
-      </div>
-      <div class="timeline-label" data-era="moderne">
-        <span class="label-era">Moderne</span>
-        <span class="label-years">1500–1945</span>
-      </div>
-      <div class="timeline-label" data-era="postmoderne">
-        <span class="label-era">Postmoderne</span>
-        <span class="label-years">ab 1945</span>
-      </div>
+
+    <!-- ========== PROMINENTER ZEITSTRAHL ========== -->
+    <div class="timeline-container" id="timelineContainer">
+        <div class="timeline-bar" id="timelineBar">
+            <div class="timeline-segment seg-antike active" data-era="antike" title="Antike · 600 v.Chr.–400 n.Chr."></div>
+            <div class="timeline-segment seg-mittelalter" data-era="mittelalter" title="Mittelalter · 400–1500"></div>
+            <div class="timeline-segment seg-moderne" data-era="moderne" title="Moderne · 1500–1945"></div>
+            <div class="timeline-segment seg-postmoderne" data-era="postmoderne" title="Postmoderne · ab 1945"></div>
+        </div>
+        <div class="timeline-labels" id="timelineLabels">
+            <div class="timeline-label active" data-era="antike">
+                <span class="label-era">Antike</span>
+                <span class="label-years">600 v.Chr.–400 n.Chr.</span>
+            </div>
+            <div class="timeline-label" data-era="mittelalter">
+                <span class="label-era">Mittelalter</span>
+                <span class="label-years">400–1500</span>
+            </div>
+            <div class="timeline-label" data-era="moderne">
+                <span class="label-era">Moderne</span>
+                <span class="label-years">1500–1945</span>
+            </div>
+            <div class="timeline-label" data-era="postmoderne">
+                <span class="label-era">Postmoderne</span>
+                <span class="label-years">ab 1945</span>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <!-- Sekundäre Button-Navigation -->
-  <nav class="era-nav" id="eraNav">
-    <button class="era-btn active" data-era="antike">Antike</button>
-    <button class="era-btn" data-era="mittelalter">Mittelalter</button>
-    <button class="era-btn" data-era="moderne">Moderne</button>
-    <button class="era-btn" data-era="postmoderne">Postmoderne</button>
-  </nav>
+    <nav class="era-nav" id="eraNav">
+        <button class="era-btn active" data-era="antike">Antike</button>
+        <button class="era-btn" data-era="mittelalter">Mittelalter</button>
+        <button class="era-btn" data-era="moderne">Moderne</button>
+        <button class="era-btn" data-era="postmoderne">Postmoderne</button>
+    </nav>
 
-  <main>
+    <main>
+        <!-- ===================== ANTIKE ===================== -->
+        <section class="section antike active" id="antike">
+            <div class="section-header">
+                <div class="section-title">Antike</div>
+                <div class="section-years">ca. 600 v.Chr. – 400 n.Chr.</div>
+            </div>
+            <div class="overview-bar">
+                Die Antike ist die Geburtsstunde der westlichen Philosophie. In Griechenland fragten Menschen erstmals systematisch nach dem Ursprung der Welt, dem richtigen Leben und dem Wesen der Erkenntnis – ohne sich auf Götter oder Mythen zu verlassen. Der <strong>Logos</strong>, die vernünftige Ordnung, tritt an die Stelle mythischer Erzählungen.
+            </div>
+            <div class="group">
+                <div class="group-label">Östliche Philosophie & Religion</div>
+                <div class="cards">
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-dates">~1500 v.Chr.</div>
+                        <div class="card-name">Veden & Hinduismus</div>
+                        <div class="card-concept">Indien</div>
+                        <div class="card-desc">Uralte indische Schriften, Grundlage des Hinduismus. Fragen nach Atman (Seele) und Brahman (Weltgeist).</div>
+                        <div class="card-expand">Die Veden enthalten spirituelles Wissen über Götter, Rituale und die Natur des Seins. Der zentrale Gedanke der Upanishaden: <strong>Atman</strong> (das individuelle Selbst) ist im Kern identisch mit <strong>Brahman</strong> (dem universellen Weltprinzip). Dieses Einheitsdenken – <em>Tat tvam asi</em> (»Das bist du«) – unterscheidet sich fundamental vom westlichen Subjekt-Objekt-Denken. Ziel ist <em>Moksha</em>, die Befreiung aus dem Kreislauf der Wiedergeburten.</div>
+                        <div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div>
+                    </div>
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-dates">563–483 v.Chr.</div>
+                        <div class="card-name">Buddha</div>
+                        <div class="card-concept">Buddhismus</div>
+                        <div class="card-desc">Siddhartha Gautama lehrt den Weg zur Erleuchtung durch Loslassen von Leid und Begierde.</div>
+                        <div class="card-expand">Die <strong>Vier Edlen Wahrheiten</strong> sind das Fundament: (1) Das Leben ist von Leid durchzogen. (2) Die Ursache des Leids ist das Begehren und Anhaften. (3) Es gibt ein Ende des Leids – <em>Nirvana</em>. (4) Der <strong>Achtfache Pfad</strong> (rechte Einsicht, rechtes Denken, rechte Rede, rechtes Handeln, rechter Lebenserwerb, rechte Anstrengung, rechte Achtsamkeit, rechte Sammlung) führt zur Befreiung. Der Buddhismus verzichtet auf einen Schöpfergott und betont die eigene Praxis und Selbsterkenntnis.</div>
+                        <div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div>
+                    </div>
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-dates">~600 v.Chr.</div>
+                        <div class="card-name">Laozi</div>
+                        <div class="card-concept">Daoismus</div>
+                        <div class="card-desc">Chinesischer Weiser. Das Dao (»der Weg«) – harmonisches Leben im Einklang mit dem natürlichen Fluss.</div>
+                        <div class="card-expand">Das <strong>Dao</strong> ist das unaussprechliche, namenlose Prinzip, das allem zugrunde liegt. <em>»Das Dao, das man nennen kann, ist nicht das ewige Dao.«</em> Die zentrale Lehre ist <strong>Wu Wei</strong> – Handeln durch Nicht-Handeln, also ein absichtsloses, spontanes Wirken im Einklang mit der Natur. Das <em>Daodejing</em> gehört zu den einflussreichsten Texten der Weltliteratur und betont Einfachheit, Demut und das weiche Wasser, das den harten Stein formt.</div>
+                        <div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div>
+                    </div>
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-dates">551–479 v.Chr.</div>
+                        <div class="card-name">Konfuzius</div>
+                        <div class="card-concept">Konfuzianismus</div>
+                        <div class="card-desc">Chinesischer Denker, der Ethik, Familie und Staatspflicht lehrte. Grundlage der chinesischen Kultur.</div>
+                        <div class="card-expand">Konfuzius lehrte eine <strong>Ethik der sozialen Harmonie</strong>. Fünf Grundtugenden: Menschlichkeit (<em>Ren</em>), Rechtschaffenheit (<em>Yi</em>), Riten (<em>Li</em>), Weisheit (<em>Zhi</em>) und Treue (<em>Xin</em>). Der gute Herrscher regiert durch moralisches Vorbild, nicht durch Zwang. Die <em>Lunyu</em> (Gespräche) betonen kindliche Pietät, Respekt vor den Ahnen und die Kultivierung des Charakters. Kein metaphysisches System, sondern praktische Lebensphilosophie.</div>
+                        <div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="group">
+                <div class="group-label">Vorsokratiker</div>
+                <div class="cards">
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-dates">624–546 v.Chr.</div>
+                        <div class="card-name">Thales</div>
+                        <div class="card-concept">Wasser · Logos</div>
+                        <div class="card-desc">Erster westlicher Philosoph. Wasser als Ursprung aller Dinge.</div>
+                        <div class="card-expand">Thales von Milet vollzog den entscheidenden Schritt vom Mythos zum <strong>Logos</strong>: Er suchte nach einem einheitlichen, natürlichen Grundprinzip (<em>Arché</em>) aller Wirklichkeit. Seine These: <strong>Wasser</strong> ist der Urstoff, aus dem alles entsteht und wohin alles zurückkehrt. Auch wenn diese Antwort aus heutiger Sicht naiv wirkt, war die <em>Fragestellung</em> revolutionär: eine rationale, nicht-religiöse Welterklärung.</div>
+                        <div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div>
+                    </div>
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-dates">570–495 v.Chr.</div>
+                        <div class="card-name">Pythagoras</div>
+                        <div class="card-concept">Zahl · Harmonie</div>
+                        <div class="card-desc">»Alles ist Zahl.« Mathematik als Schlüssel zum Kosmos.</div>
+                        <div class="card-expand">Pythagoras und seine Schule erkannten, dass die <strong>Wirklichkeit im Kern mathematisch</strong> strukturiert ist. Musikintervalle, Planetenbahnen – alles folgt Zahlenverhältnissen. Diese Entdeckung begründete die Idee einer <em>harmonischen kosmischen Ordnung</em>. Die Pythagoreer praktizierten eine Lebensweise der Reinheit und glaubten an die Seelenwanderung. Ihr Einfluss auf Platon und die gesamte abendländische Wissenschaft ist kaum zu überschätzen.</div>
+                        <div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div>
+                    </div>
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-dates">535–475 v.Chr.</div>
+                        <div class="card-name">Heraklit</div>
+                        <div class="card-concept">Fluss · Logos</div>
+                        <div class="card-desc">»Panta rhei« – alles fließt. Der Logos ordnet den ewigen Wandel.</div>
+                        <div class="card-expand">Heraklit von Ephesos betont die <strong>Einheit der Gegensätze</strong>. <em>»Man kann nicht zweimal in denselben Fluss steigen.«</em> Alles ist in ständigem Wandel – doch dieser Wandel folgt einem verborgenen <strong>Logos</strong>, einer vernünftigen Ordnung. <em>»Der Krieg ist der Vater aller Dinge«</em> meint, dass Spannung und Konflikt die treibenden Kräfte der Wirklichkeit sind. Tag und Nacht, Leben und Tod sind zwei Seiten derselben Münze.</div>
+                        <div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div>
+                    </div>
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-dates">460–370 v.Chr.</div>
+                        <div class="card-name">Demokrit</div>
+                        <div class="card-concept">Atome · Materialismus</div>
+                        <div class="card-desc">Alles besteht aus unteilbaren Teilchen (Atomen) und leerem Raum.</div>
+                        <div class="card-expand">Demokrit entwickelte die erste umfassende <strong>materialistische Philosophie</strong>. Die Welt besteht aus unteilbaren, ewigen <em>Atomen</em>, die sich im leeren Raum bewegen und durch rein mechanische Zusammenstöße die Vielfalt der Erscheinungen hervorbringen. Selbst die Seele ist aus feinen Atomen zusammengesetzt. Es gibt keine göttliche Vorsehung – alles geschieht aus Notwendigkeit. Eine erstaunlich moderne Weltsicht, die ohne übernatürliche Kräfte auskommt.</div>
+                        <div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="group">
+                <div class="group-label">Griechische Klassik</div>
+                <div class="cards">
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-dates">470–399 v.Chr.</div>
+                        <div class="card-name">Sokrates</div>
+                        <div class="card-concept">Tugend · Dialog</div>
+                        <div class="card-desc">»Ich weiß, dass ich nichts weiß.« Sokratische Methode: Wahrheit durch Fragen.</div>
+                        <div class="card-expand">Sokrates schrieb nichts nieder, doch seine <strong>Methode des kritischen Dialogs</strong> prägte die gesamte Philosophie. Durch geschicktes Fragen (<em>Mäeutik</em> – Hebammenkunst) half er anderen, selbst zur Wahrheit zu finden. Sein Daimonion, eine innere warnende Stimme, hielt ihn von Unrecht ab. Wegen angeblicher Verführung der Jugend und Asebie zum Tode verurteilt, trank er den Schierlingsbecher und wurde zum <strong>Sinnbild philosophischer Integrität</strong>.</div>
+                        <div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div>
+                    </div>
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-dates">428–348 v.Chr.</div>
+                        <div class="card-name">Platon</div>
+                        <div class="card-concept">Ideen · Höhle</div>
+                        <div class="card-desc">Die wahre Wirklichkeit liegt in ewigen Ideen. Höhlengleichnis: Die sichtbare Welt ist nur Schatten.</div>
+                        <div class="card-expand">Platons <strong>Ideenlehre</strong> unterscheidet zwischen der sichtbaren Welt des Werdens und der unsichtbaren Welt des Seins. Das <em>Höhlengleichnis</em> illustriert dies eindrucksvoll: Die Menschen sehen nur Schatten an einer Höhlenwand und halten sie für die Realität. Der Philosoph steigt aus der Höhle und erkennt die wahre Sonne – das <strong>Gute an sich</strong>. Politisch forderte Platon einen Idealstaat, regiert von Philosophenkönigen, die das Gute geschaut haben.</div>
+                        <div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div>
+                    </div>
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-dates">384–322 v.Chr.</div>
+                        <div class="card-name">Aristoteles</div>
+                        <div class="card-concept">Teleos · Tugend</div>
+                        <div class="card-desc">Begründete Logik, Ethik, Politik. Jedes Ding hat einen Zweck (Telos).</div>
+                        <div class="card-expand">Aristoteles verwarf Platons Ideenhimmel und verlegte die <strong>Form in die Dinge selbst</strong>. Seine <em>Vier-Ursachen-Lehre</em> (Stoff, Form, Wirkursache, Zweck) erklärt, warum Dinge sind, was sie sind. In der Ethik entwickelte er die <strong>Mesotes-Lehre</strong>: Tugend liegt in der Mitte zwischen zwei Extremen (z.B. Tapferkeit zwischen Feigheit und Tollkühnheit). Ziel des Lebens ist <em>Eudaimonia</em> – nicht bloßes Vergnügen, sondern ein gelingendes, tugendhaftes Leben in Übereinstimmung mit der Vernunft.</div>
+                        <div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="group">
+                <div class="group-label">Hellenismus</div>
+                <div class="cards">
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-dates">334–262 v.Chr.</div>
+                        <div class="card-name">Zenon von Kition</div>
+                        <div class="card-concept">Stoa · Vernunft</div>
+                        <div class="card-desc">Gründer der Stoa. Tugend ist das einzig wahre Gut.</div>
+                        <div class="card-expand">Zenon lehrte in der <em>Stoa Poikile</em> (bemalte Säulenhalle) in Athen und begründete damit den <strong>Stoizismus</strong>. Kern der Lehre: Nur die <strong>Tugend</strong> (Arete) ist ein echtes Gut. Alles andere – Gesundheit, Reichtum, selbst das Leben – sind <em>Adiaphora</em>, gleichgültige Dinge. Der Weise lebt in Übereinstimmung mit dem <strong>Logos</strong>, der vernünftigen Weltordnung. Die stoische Physik ist pantheistisch: Gott ist die feurige Vernunft, die den Kosmos durchdringt.</div>
+                        <div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div>
+                    </div>
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-dates">4–65 n.Chr.</div>
+                        <div class="card-name">Seneca</div>
+                        <div class="card-concept">Stoa · Zeit</div>
+                        <div class="card-desc">»Vita brevis est« – das Leben ist kurz. Römischer Stoiker.</div>
+                        <div class="card-expand">Seneca war Philosoph, Dramatiker und Berater Kaiser Neros – bis dieser ihn in den Selbstmord zwang. Seine Briefe an Lucilius (<em>Epistulae morales</em>) sind zeitlose Meditationen über <strong>Zeit, Tod und Gelassenheit</strong>. <em>»Nicht kurz ist die Lebenszeit, die uns gegeben ist, sondern wir machen sie kurz.«</em> Er lehrte, dass wahre innere Freiheit darin besteht, seine Gedanken und Urteile zu beherrschen – nicht äußere Umstände zu kontrollieren.</div>
+                        <div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div>
+                    </div>
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-dates">341–270 v.Chr.</div>
+                        <div class="card-name">Epikur</div>
+                        <div class="card-concept">Freude · Ataraxia</div>
+                        <div class="card-desc">Höchstes Gut: Lust als Seelenfrieden. Angst vor dem Tod ist sinnlos.</div>
+                        <div class="card-expand">Epikurs <strong>Lustlehre</strong> wird oft missverstanden. Es geht nicht um Ausschweifung, sondern um <strong>Abwesenheit von Schmerz</strong> (Aponia) und <strong>Seelenruhe</strong> (Ataraxia). Sein berühmtes Argument gegen Todesfurcht: <em>»Solange wir sind, ist der Tod nicht da; wenn der Tod da ist, sind wir nicht.«</em> Die Götter existieren zwar, kümmern sich aber nicht um die Menschen. Ziel: ein zurückgezogenes, genügsames Leben im Freundeskreis (der berühmte <em>Garten</em> Epikurs).</div>
+                        <div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- ===================== ANTIKE ===================== -->
-    <section class="section antike active" id="antike">
-      <div class="section-header">
-        <div class="section-title">Antike</div>
-        <div class="section-years">ca. 600 v.Chr. – 400 n.Chr.</div>
-      </div>
-      <div class="overview-bar">
-        Die Antike ist die Geburtsstunde der westlichen Philosophie. In Griechenland fragten Menschen erstmals systematisch nach dem Ursprung der Welt, dem richtigen Leben und dem Wesen der Erkenntnis – ohne sich auf Götter oder Mythen zu verlassen.
-      </div>
-      <div class="group">
-        <div class="group-label">Östliche Philosophie & Religion</div>
-        <div class="cards">
-          <div class="card" onclick="toggleCard(this)"><div class="card-dates">~1500 v.Chr.</div><div class="card-name">Veden & Hinduismus</div><div class="card-concept">Indien</div><div class="card-desc">Uralte indische Schriften, Grundlage des Hinduismus. Fragen nach Atman (Seele) und Brahman (Weltgeist).</div><div class="card-expand">Die Veden enthalten spirituelles Wissen über Götter, Rituale und die Natur des Seins. Kernidee: Das individuelle Selbst (Atman) ist eins mit dem Weltprinzip (Brahman).</div><div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div></div>
-          <div class="card" onclick="toggleCard(this)"><div class="card-dates">563–483 v.Chr.</div><div class="card-name">Buddha</div><div class="card-concept">Buddhismus</div><div class="card-desc">Siddhartha Gautama lehrt den Weg zur Erleuchtung durch Loslassen von Leid und Begierde.</div><div class="card-expand">Vier Edle Wahrheiten: Leid existiert, Leid hat Ursachen (Begehren), Leid kann überwunden werden, der Achtfache Pfad führt zur Befreiung (Nirvana).</div><div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div></div>
-          <div class="card" onclick="toggleCard(this)"><div class="card-dates">~600 v.Chr.</div><div class="card-name">Laozi</div><div class="card-concept">Daoismus</div><div class="card-desc">Chinesischer Weiser. Das Dao (»der Weg«) – harmonisches Leben im Einklang mit dem natürlichen Fluss.</div><div class="card-expand">Das Dao ist das unaussprechliche Grundprinzip. Wu Wei – Handeln ohne erzwungene Kontrolle. Sein Werk: das Daodejing.</div><div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div></div>
-          <div class="card" onclick="toggleCard(this)"><div class="card-dates">551–479 v.Chr.</div><div class="card-name">Konfuzius</div><div class="card-concept">Konfuzianismus</div><div class="card-desc">Chinesischer Denker, der Ethik, Familie und Staatspflicht lehrte. Grundlage der chinesischen Kultur.</div><div class="card-expand">Harmonie durch Tugend, Respekt und Rituale. Der gute Herrscher als moralisches Vorbild. Werk: Lunyu (Gespräche).</div><div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div></div>
-        </div>
-      </div>
-      <div class="group">
-        <div class="group-label">Vorsokratiker</div>
-        <div class="cards">
-          <div class="card" onclick="toggleCard(this)"><div class="card-dates">624–546 v.Chr.</div><div class="card-name">Thales</div><div class="card-concept">Wasser · Logos</div><div class="card-desc">Erster westlicher Philosoph. Wasser als Ursprung aller Dinge.</div><div class="card-expand">Rationale Welterklärung statt Mythos. Wasser ist das Grundelement – eine revolutionäre Idee.</div><div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div></div>
-          <div class="card" onclick="toggleCard(this)"><div class="card-dates">570–495 v.Chr.</div><div class="card-name">Pythagoras</div><div class="card-concept">Zahl · Harmonie</div><div class="card-desc">»Alles ist Zahl.« Mathematik als Schlüssel zum Kosmos.</div><div class="card-expand">Die Wirklichkeit ist im Kern mathematisch. Harmonie und Ordnung durch Zahlen und Proportionen.</div><div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div></div>
-          <div class="card" onclick="toggleCard(this)"><div class="card-dates">535–475 v.Chr.</div><div class="card-name">Heraklit</div><div class="card-concept">Fluss · Logos</div><div class="card-desc">»Panta rhei« – alles fließt. Der Logos ordnet den ewigen Wandel.</div><div class="card-expand">Gegensätze als Einheit. Man kann nicht zweimal in denselben Fluss steigen.</div><div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div></div>
-          <div class="card" onclick="toggleCard(this)"><div class="card-dates">460–370 v.Chr.</div><div class="card-name">Demokrit</div><div class="card-concept">Atome · Materialismus</div><div class="card-desc">Alles besteht aus unteilbaren Teilchen (Atomen) und leerem Raum.</div><div class="card-expand">Materialistisches Weltbild: Geist, Seele – alles aus Atomen. Erstaunlich modern.</div><div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div></div>
-        </div>
-      </div>
-      <div class="group">
-        <div class="group-label">Griechische Klassik</div>
-        <div class="cards">
-          <div class="card" onclick="toggleCard(this)"><div class="card-dates">470–399 v.Chr.</div><div class="card-name">Sokrates</div><div class="card-concept">Tugend · Dialog</div><div class="card-desc">»Ich weiß, dass ich nichts weiß.« Sokratische Methode: Wahrheit durch Fragen.</div><div class="card-expand">Keine eigenen Schriften. Durch kritisches Hinterfragen zur Erkenntnis. Zum Tod verurteilt – Symbol für Integrität.</div><div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div></div>
-          <div class="card" onclick="toggleCard(this)"><div class="card-dates">428–348 v.Chr.</div><div class="card-name">Platon</div><div class="card-concept">Ideen · Höhle</div><div class="card-desc">Die wahre Wirklichkeit liegt in ewigen Ideen. Höhlengleichnis: Die sichtbare Welt ist nur Schatten.</div><div class="card-expand">Ideenlehre. Der Philosoph steigt aus der Höhle und erkennt die Wahrheit. Idealstaat der Philosophenkönige.</div><div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div></div>
-          <div class="card" onclick="toggleCard(this)"><div class="card-dates">384–322 v.Chr.</div><div class="card-name">Aristoteles</div><div class="card-concept">Teleos · Tugend</div><div class="card-desc">Begründete Logik, Ethik, Politik. Jedes Ding hat einen Zweck (Telos).</div><div class="card-expand">Ideen sind in den Dingen. Höchstes Ziel: Eudaimonia (Glückseligkeit) durch Tugend und Vernunft.</div><div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div></div>
-        </div>
-      </div>
-      <div class="group">
-        <div class="group-label">Hellenismus</div>
-        <div class="cards">
-          <div class="card" onclick="toggleCard(this)"><div class="card-dates">334–262 v.Chr.</div><div class="card-name">Zenon von Kition</div><div class="card-concept">Stoa · Vernunft</div><div class="card-desc">Gründer der Stoa. Tugend ist das einzig wahre Gut.</div><div class="card-expand">Frieden durch Vernunft und Akzeptanz des Schicksals. Nur was wir kontrollieren, zählt.</div><div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div></div>
-          <div class="card" onclick="toggleCard(this)"><div class="card-dates">4–65 n.Chr.</div><div class="card-name">Seneca</div><div class="card-concept">Stoa · Zeit</div><div class="card-desc">»Vita brevis est« – das Leben ist kurz. Römischer Stoiker.</div><div class="card-expand">Berater Neros, musste auf dessen Befehl sterben. Schriften über Zeit und Gelassenheit.</div><div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div></div>
-          <div class="card" onclick="toggleCard(this)"><div class="card-dates">341–270 v.Chr.</div><div class="card-name">Epikur</div><div class="card-concept">Freude · Ataraxia</div><div class="card-desc">Höchstes Gut: Lust als Seelenfrieden. Angst vor dem Tod ist sinnlos.</div><div class="card-expand">Bescheidene Freude, Freundschaft, Philosophie. Ziel: Ataraxia (Seelenruhe).</div><div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div></div>
-        </div>
-      </div>
-    </section>
+        <!-- ===================== MITTELALTER ===================== -->
+        <section class="section mittelalter" id="mittelalter">
+            <div class="section-header"><div class="section-title">Mittelalter</div><div class="section-years">ca. 400 – 1500</div></div>
+            <div class="overview-bar">Philosophie im Dienst der Theologie. Die große Frage: Wie lässt sich das antike Erbe – besonders Aristoteles und Platon – mit dem christlichen, jüdischen und islamischen Glauben vereinbaren? Blüte der <strong>Scholastik</strong> und der islamischen Philosophie.</div>
+            <div class="group">
+                <div class="group-label">Islamische Philosophie</div>
+                <div class="cards">
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-dates">8.–13. Jh.</div>
+                        <div class="card-name">Avicenna & Averroes</div>
+                        <div class="card-concept">Falsafa · Aristoteles</div>
+                        <div class="card-desc">Bewahrten und kommentierten Aristoteles. Retteten antikes Wissen für Europa.</div>
+                        <div class="card-expand">Im <strong>Goldenen Zeitalter des Islam</strong> übersetzten und kommentierten Philosophen wie <strong>Avicenna</strong> (Ibn Sina, 980–1037) und <strong>Averroes</strong> (Ibn Rushd, 1126–1198) das gesamte aristotelische Werk. Ohne sie wäre ein großer Teil der antiken Philosophie verloren gegangen. Avicenna entwickelte eine einflussreiche Seelenlehre und den ontologischen Gottesbeweis. Averroes, von Thomas von Aquin schlicht »Der Kommentator« genannt, vertrat die Lehre von der <strong>doppelten Wahrheit</strong>: Was philosophisch wahr ist, kann religiös anders aussehen – und umgekehrt.</div>
+                        <div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="group">
+                <div class="group-label">Scholastik</div>
+                <div class="cards">
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-dates">354–430</div>
+                        <div class="card-name">Augustinus</div>
+                        <div class="card-concept">Glaube · Illumination</div>
+                        <div class="card-desc">Kirchenvater. Verband Platon mit Christentum. »Unruhig ist unser Herz…«</div>
+                        <div class="card-expand">Augustinus verband <strong>platonisches Denken mit christlicher Theologie</strong>. In den <em>Confessiones</em> beschreibt er seinen Weg zum Glauben. Seine <strong>Illuminationslehre</strong>: So wie die Sonne die sichtbaren Dinge erleuchtet, erleuchtet Gott den menschlichen Geist, damit er ewige Wahrheiten erkennen kann. Im <em>Gottesstaat</em> unterscheidet er den irdischen vom himmlischen Staat. Sein berühmter Satz: <em>»Unruhig ist unser Herz, bis es ruht in dir.«</em></div>
+                        <div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div>
+                    </div>
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-dates">1225–1274</div>
+                        <div class="card-name">Thomas von Aquin</div>
+                        <div class="card-concept">Scholastik · Synthese</div>
+                        <div class="card-desc">Verband Aristoteles mit dem Christentum. Summa Theologiae.</div>
+                        <div class="card-expand">Thomas vollendete die <strong>Synthese von Vernunft und Glaube</strong>. In der <em>Summa Theologiae</em> argumentiert er, dass Glaube und Vernunft sich nicht widersprechen, sondern ergänzen – beide stammen von Gott. Seine <strong>fünf Gottesbeweise</strong> (darunter der kosmologische Beweis des ersten Bewegers) sind bis heute berühmt. Die thomistische <strong>Naturrechtslehre</strong> besagt, dass das sittliche Gesetz durch die Vernunft aus der Natur des Menschen ablesbar ist.</div>
+                        <div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div>
+                    </div>
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-dates">1287–1347</div>
+                        <div class="card-name">Wilhelm von Ockham</div>
+                        <div class="card-concept">Nominalismus</div>
+                        <div class="card-desc">Ockhams Rasiermesser: Einfachheit als Prinzip.</div>
+                        <div class="card-expand">Wilhelm von Ockham war ein radikaler <strong>Nominalist</strong>: Allgemeinbegriffe wie »Menschheit« sind nur Namen, keine realen Entitäten. Sein berühmtes <strong>Rasiermesser-Prinzip</strong>: <em>»Entitäten sind nicht über das Notwendige hinaus zu vermehren.«</em> Einfachheit ist ein methodisches Prinzip – wähle die sparsamste Erklärung. Damit bereitete er den Weg für die neuzeitliche empirische Wissenschaft und die Trennung von Philosophie und Theologie.</div>
+                        <div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- ===================== MITTELALTER ===================== -->
-    <section class="section mittelalter" id="mittelalter">
-      <div class="section-header"><div class="section-title">Mittelalter</div><div class="section-years">ca. 400 – 1500</div></div>
-      <div class="overview-bar">Philosophie im Dienst der Theologie. Wie lässt sich antikes Denken mit dem Glauben vereinbaren? Blüte der islamischen Philosophie.</div>
-      <div class="group">
-        <div class="group-label">Islamische Philosophie</div>
-        <div class="cards">
-          <div class="card" onclick="toggleCard(this)"><div class="card-dates">8.–13. Jh.</div><div class="card-name">Avicenna & Averroes</div><div class="card-concept">Falsafa · Aristoteles</div><div class="card-desc">Bewahrten und kommentierten Aristoteles. Retteten antikes Wissen für Europa.</div><div class="card-expand">Goldenes Zeitalter des Islam. Avicenna (Ibn Sina) schrieb über Seele und Medizin. Averroes (Ibn Rushd) war »Der Kommentator«.</div><div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div></div>
-        </div>
-      </div>
-      <div class="group">
-        <div class="group-label">Scholastik</div>
-        <div class="cards">
-          <div class="card" onclick="toggleCard(this)"><div class="card-dates">354–430</div><div class="card-name">Augustinus</div><div class="card-concept">Glaube · Illumination</div><div class="card-desc">Kirchenvater. Verband Platon mit Christentum. »Unruhig ist unser Herz…«</div><div class="card-expand">Confessiones. Erkenntnis durch göttliche Erleuchtung. Werk: Gottesstaat.</div><div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div></div>
-          <div class="card" onclick="toggleCard(this)"><div class="card-dates">1225–1274</div><div class="card-name">Thomas von Aquin</div><div class="card-concept">Scholastik · Synthese</div><div class="card-desc">Verband Aristoteles mit dem Christentum. Summa Theologiae.</div><div class="card-expand">Glaube und Vernunft ergänzen sich. Gottesbeweis durch den ersten Beweger.</div><div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div></div>
-          <div class="card" onclick="toggleCard(this)"><div class="card-dates">1287–1347</div><div class="card-name">Wilhelm von Ockham</div><div class="card-concept">Nominalismus</div><div class="card-desc">Ockhams Rasiermesser: Einfachheit als Prinzip.</div><div class="card-expand">Allgemeinbegriffe sind nur Namen. Trennung von Philosophie und Theologie.</div><div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div></div>
-        </div>
-      </div>
-    </section>
+        <!-- ===================== MODERNE ===================== -->
+        <section class="section moderne" id="moderne">
+            <div class="section-header"><div class="section-title">Moderne</div><div class="section-years">ca. 1500 – 1945</div></div>
+            <div class="overview-bar">Aufbruch in ein neues Zeitalter: <strong>Naturwissenschaft, Vernunft und das Individuum</strong> rücken ins Zentrum. Der Rationalismus setzt auf die Kraft des Denkens, der Empirismus auf die Erfahrung. Die Aufklärung fordert den Mut, sich des eigenen Verstandes zu bedienen. Der Deutsche Idealismus erreicht philosophische Gipfel – bevor Nietzsche die Fundamente erschüttert.</div>
+            <div class="group">
+                <div class="group-label">Rationalismus</div>
+                <div class="cards">
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-dates">1596–1650</div>
+                        <div class="card-name">René Descartes</div>
+                        <div class="card-concept">Cogito · Dualismus</div>
+                        <div class="card-desc">»Ich denke, also bin ich.« Radikaler Zweifel als Fundament.</div>
+                        <div class="card-expand">Descartes unterzog alles einem <strong>radikalen methodischen Zweifel</strong>: Was, wenn ein böser Dämon mich in allem täuscht? Der einzig unerschütterliche Punkt: <em>»Cogito, ergo sum«</em> – im Akt des Zweifelns erfahre ich mich selbst als denkendes Wesen. Daraus entwickelte er einen strikten <strong>Dualismus</strong>: <em>Res cogitans</em> (denkende Substanz, Geist) und <em>Res extensa</em> (ausgedehnte Substanz, Körper) sind grundverschieden. Dieses Leib-Seele-Problem beschäftigt die Philosophie bis heute.</div>
+                        <div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div>
+                    </div>
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-dates">1632–1677</div>
+                        <div class="card-name">Baruch Spinoza</div>
+                        <div class="card-concept">Monismus · Gott=Natur</div>
+                        <div class="card-desc">»Deus sive Natura.« Alles ist eins.</div>
+                        <div class="card-expand">Spinoza radikalisierte den Rationalismus zu einem <strong>pantheistischen Monismus</strong>: Es gibt nur <em>eine</em> Substanz – Gott, die Natur. Alles Einzelne ist nur eine <em>Modifikation</em> dieser einen Substanz. Sein Hauptwerk <em>Ethik</em> ist in geometrischer Form geschrieben: Axiome, Definitionen, Lehrsätze. Spinozas höchstes Ziel: <strong>Erkenntnis aus der Perspektive der Ewigkeit</strong> (<em>sub specie aeternitatis</em>) – die Dinge so sehen, wie Gott sie sieht. Das führt zur wahren Freiheit.</div>
+                        <div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="group">
+                <div class="group-label">Empirismus</div>
+                <div class="cards">
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-dates">1632–1704</div>
+                        <div class="card-name">John Locke</div>
+                        <div class="card-concept">Tabula rasa</div>
+                        <div class="card-desc">Geist als unbeschriebenes Blatt. Alles Wissen aus Erfahrung.</div>
+                        <div class="card-expand">Locke verwarf die Lehre von den angeborenen Ideen. Der menschliche Geist ist bei der Geburt eine <strong>Tabula rasa</strong> – ein weißes Blatt. Alles Wissen stammt aus <em>äußerer Erfahrung</em> (Sensation) und <em>innerer Erfahrung</em> (Reflexion). Seine <strong>Naturrechtsphilosophie</strong> prägte die amerikanische Unabhängigkeitserklärung: Jeder Mensch hat unveräußerliche Rechte auf Leben, Freiheit und Eigentum. Der Staat entsteht durch einen Gesellschaftsvertrag und muss die Bürger vor Übergriffen schützen.</div>
+                        <div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div>
+                    </div>
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-dates">1711–1776</div>
+                        <div class="card-name">David Hume</div>
+                        <div class="card-concept">Kausalität · Skepsis</div>
+                        <div class="card-desc">Wir sehen nur Abfolgen, nie echte Ursachen. Erweckte Kant aus seinem dogmatischen Schlummer.</div>
+                        <div class="card-expand">Hume trieb den Empirismus zu seinen <strong>skeptischen Konsequenzen</strong>: Kausalität ist keine objektive Tatsache, sondern eine <strong>Gewohnheit des Geistes</strong>. Wir sehen, dass Ereignis B auf Ereignis A folgt – aber nie eine »Kraft« oder »Notwendigkeit«. Auch das <em>Ich</em> ist nur ein Bündel ständig wechselnder Eindrücke. Mit diesen radikalen Zweifeln weckte Hume, wie Kant später sagte, die Philosophie aus ihrem dogmatischen Schlummer.</div>
+                        <div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="group">
+                <div class="group-label">Aufklärung & Deutscher Idealismus</div>
+                <div class="cards">
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-dates">1724–1804</div>
+                        <div class="card-name">Immanuel Kant</div>
+                        <div class="card-concept">Pflicht · Kategorischer Imperativ</div>
+                        <div class="card-desc">Kopernikanische Wende. Handle nach Maximen, die allgemeines Gesetz werden könnten.</div>
+                        <div class="card-expand">Kant vereinte Rationalismus und Empirismus durch die <strong>kopernikanische Wende</strong>: Nicht unser Denken richtet sich nach den Dingen, sondern die Dinge nach den Strukturen unseres Geistes. Raum, Zeit und Kategorien wie Kausalität sind <em>Bedingungen der Möglichkeit von Erfahrung</em>. In der Ethik formulierte er den <strong>Kategorischen Imperativ</strong>: <em>»Handle nur nach derjenigen Maxime, von der du zugleich wollen kannst, dass sie ein allgemeines Gesetz werde.«</em> Der Mensch darf nie bloß als Mittel, sondern muss immer zugleich als Zweck behandelt werden.</div>
+                        <div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div>
+                    </div>
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-dates">1770–1831</div>
+                        <div class="card-name">Georg W. F. Hegel</div>
+                        <div class="card-concept">Dialektik · Weltgeist</div>
+                        <div class="card-desc">Geschichte als Selbstverwirklichung des Geistes durch These-Antithese-Synthese.</div>
+                        <div class="card-expand">Hegel sah die gesamte Wirklichkeit als Entfaltung des <strong>Weltgeistes</strong>. Sein dialektisches Modell – <strong>These, Antithese, Synthese</strong> – beschreibt, wie Widersprüche zu immer höheren Entwicklungsstufen führen. Die <em>Phänomenologie des Geistes</em> zeichnet den Weg vom sinnlichen Bewusstsein zum absoluten Wissen nach. Berühmte Parabel: <strong>Herr und Knecht</strong> – das Selbstbewusstsein entsteht im Anerkennungskampf, wobei paradoxerweise der Knecht durch seine Arbeit ein tieferes Bewusstsein erlangt als der Herr.</div>
+                        <div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div>
+                    </div>
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-dates">1818–1883</div>
+                        <div class="card-name">Karl Marx</div>
+                        <div class="card-concept">Kommunismus</div>
+                        <div class="card-desc">Kapitalismuskritik. Geschichte als Klassenkampf. Kommunistisches Manifest.</div>
+                        <div class="card-expand">Marx stellte Hegel »vom Kopf auf die Füße«: Nicht das Bewusstsein bestimmt das Sein, sondern das <strong>gesellschaftliche Sein das Bewusstsein</strong>. Der <em>Historische Materialismus</em> sieht die Geschichte als Abfolge von Klassenkämpfen, angetrieben durch ökonomische Verhältnisse. Im Kapitalismus wird der Arbeiter vom Produkt seiner Arbeit <strong>entfremdet</strong>; der Kapitalist eignet sich den <em>Mehrwert</em> an. Marx' Vision: die klassenlose Gesellschaft nach der proletarischen Revolution.</div>
+                        <div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="group">
+                <div class="group-label">Existenz & Kritik</div>
+                <div class="cards">
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-dates">1813–1855</div>
+                        <div class="card-name">Søren Kierkegaard</div>
+                        <div class="card-concept">Existenz · Sprung</div>
+                        <div class="card-desc">Vater des Existenzialismus. Das Individuum im Mittelpunkt.</div>
+                        <div class="card-expand">Kierkegaard wandte sich gegen Hegels abstraktes System und stellte das <strong>einzelne, existierende Individuum</strong> ins Zentrum. Er beschrieb drei <strong>Stadien der Existenz</strong>: das ästhetische (Genuss), das ethische (Pflicht) und das religiöse (Glaube). Der Übergang zum Glauben ist kein logischer Schritt, sondern ein <strong>irrationaler Sprung</strong>. Sein Begriff der <em>Angst</em> als Grunderfahrung menschlicher Freiheit wurde für den späteren Existenzialismus prägend.</div>
+                        <div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div>
+                    </div>
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-dates">1844–1900</div>
+                        <div class="card-name">Friedrich Nietzsche</div>
+                        <div class="card-concept">Nihilismus · Übermensch</div>
+                        <div class="card-desc">»Gott ist tot!« Neubewertung aller Werte. Wille zur Macht.</div>
+                        <div class="card-expand">Nietzsche diagnostizierte den <strong>Tod Gottes</strong> als das zentrale Ereignis der Moderne: Alle traditionellen Werte und metaphysischen Wahrheiten haben ihre Glaubwürdigkeit verloren. Doch der drohende Nihilismus ist nicht das Ende, sondern ein Übergang. Der <strong>Übermensch</strong> überwindet die alte Moral und schafft aus eigener Kraft neue Werte. Die <em>ewige Wiederkehr des Gleichen</em> ist der ultimative Test: Willst du dieses Leben unendlich oft genau so wieder leben? Nur der, der dies bejahen kann, ist wahrhaft frei.</div>
+                        <div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- ===================== MODERNE ===================== -->
-    <section class="section moderne" id="moderne">
-      <div class="section-header"><div class="section-title">Moderne</div><div class="section-years">ca. 1500 – 1945</div></div>
-      <div class="overview-bar">Aufbruch: Naturwissenschaft, Vernunft, Individuum. Rationalismus vs. Empirismus. Aufklärung, Idealismus und die ersten Zweifel.</div>
-      <div class="group">
-        <div class="group-label">Rationalismus</div>
-        <div class="cards">
-          <div class="card" onclick="toggleCard(this)"><div class="card-dates">1596–1650</div><div class="card-name">René Descartes</div><div class="card-concept">Cogito · Dualismus</div><div class="card-desc">»Ich denke, also bin ich.« Radikaler Zweifel als Fundament.</div><div class="card-expand">Trennung von Geist und Materie. Begründer der neuzeitlichen Philosophie.</div><div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div></div>
-          <div class="card" onclick="toggleCard(this)"><div class="card-dates">1632–1677</div><div class="card-name">Baruch Spinoza</div><div class="card-concept">Monismus · Gott=Natur</div><div class="card-desc">»Deus sive Natura.« Alles ist eins.</div><div class="card-expand">Gott und Welt sind eine Substanz. Ethik in geometrischer Form.</div><div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div></div>
-        </div>
-      </div>
-      <div class="group">
-        <div class="group-label">Empirismus</div>
-        <div class="cards">
-          <div class="card" onclick="toggleCard(this)"><div class="card-dates">1632–1704</div><div class="card-name">John Locke</div><div class="card-concept">Tabula rasa</div><div class="card-desc">Geist als unbeschriebenes Blatt. Alles Wissen aus Erfahrung.</div><div class="card-expand">Naturrechte: Leben, Freiheit, Eigentum. Einfluss auf die USA.</div><div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div></div>
-          <div class="card" onclick="toggleCard(this)"><div class="card-dates">1711–1776</div><div class="card-name">David Hume</div><div class="card-concept">Kausalität · Skepsis</div><div class="card-desc">Wir sehen nur Abfolgen, nie echte Ursachen. Erweckte Kant.</div><div class="card-expand">Kausalität als Gewohnheit. Radikaler Zweifel am Selbst.</div><div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div></div>
-        </div>
-      </div>
-      <div class="group">
-        <div class="group-label">Aufklärung & Deutscher Idealismus</div>
-        <div class="cards">
-          <div class="card" onclick="toggleCard(this)"><div class="card-dates">1724–1804</div><div class="card-name">Immanuel Kant</div><div class="card-concept">Pflicht · Kategorischer Imperativ</div><div class="card-desc">Kopernikanische Wende. Handle nach Maximen, die allgemeines Gesetz werden könnten.</div><div class="card-expand">Raum, Zeit, Kausalität sind Anschauungsformen. »Der gestirnte Himmel über mir…«</div><div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div></div>
-          <div class="card" onclick="toggleCard(this)"><div class="card-dates">1770–1831</div><div class="card-name">Georg W. F. Hegel</div><div class="card-concept">Dialektik · Weltgeist</div><div class="card-desc">Geschichte als Selbstverwirklichung des Geistes durch These-Antithese-Synthese.</div><div class="card-expand">Dialektik prägte Marx. Der preußische Staat als vorläufiger Höhepunkt.</div><div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div></div>
-          <div class="card" onclick="toggleCard(this)"><div class="card-dates">1818–1883</div><div class="card-name">Karl Marx</div><div class="card-concept">Kommunismus</div><div class="card-desc">Kapitalismuskritik. Geschichte als Klassenkampf. Kommunistisches Manifest.</div><div class="card-expand">Historischer Materialismus. Mehrwert und Ausbeutung. Revolution für klassenlose Gesellschaft.</div><div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div></div>
-        </div>
-      </div>
-      <div class="group">
-        <div class="group-label">Existenz & Kritik</div>
-        <div class="cards">
-          <div class="card" onclick="toggleCard(this)"><div class="card-dates">1813–1855</div><div class="card-name">Søren Kierkegaard</div><div class="card-concept">Existenz · Sprung</div><div class="card-desc">Vater des Existenzialismus. Das Individuum im Mittelpunkt.</div><div class="card-expand">Drei Stadien: ästhetisch, ethisch, religiös. Glaube als irrationaler Sprung.</div><div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div></div>
-          <div class="card" onclick="toggleCard(this)"><div class="card-dates">1844–1900</div><div class="card-name">Friedrich Nietzsche</div><div class="card-concept">Nihilismus · Übermensch</div><div class="card-desc">»Gott ist tot!« Neubewertung aller Werte. Wille zur Macht.</div><div class="card-expand">Antwort auf Nihilismus: schöpferischer Übermensch, ewige Wiederkehr.</div><div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div></div>
-        </div>
-      </div>
-    </section>
+        <!-- ===================== POSTMODERNE ===================== -->
+        <section class="section postmoderne" id="postmoderne">
+            <div class="section-header"><div class="section-title">Postmoderne</div><div class="section-years">ab ca. 1945</div></div>
+            <div class="overview-bar">Das Vertrauen in Vernunft, Fortschritt und große Erzählungen ist nach zwei Weltkriegen und Auschwitz tief erschüttert. <strong>Sprache, Macht und das Subjekt selbst</strong> werden kritisch hinterfragt. Der Existenzialismus betont die radikale Freiheit des Einzelnen, während Poststrukturalismus und Dekonstruktion die Stabilität von Bedeutung und Identität in Frage stellen.</div>
+            <div class="group">
+                <div class="group-label">Existenzphilosophie</div>
+                <div class="cards">
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-dates">1889–1976</div>
+                        <div class="card-name">Martin Heidegger</div>
+                        <div class="card-concept">Sein · Dasein</div>
+                        <div class="card-desc">Frage nach dem Sinn des Seins. Dasein ist in die Welt geworfen.</div>
+                        <div class="card-expand">Heidegger stellte die <strong>Seinsfrage</strong> neu: Was heißt es, dass etwas <em>ist</em>? In <em>Sein und Zeit</em> analysiert er das menschliche <strong>Dasein</strong>, das durch <em>Geworfenheit</em> (wir haben uns nicht selbst in die Welt gebracht), <em>Entwurf</em> (wir entwerfen uns auf Möglichkeiten hin) und <em>Sein-zum-Tode</em> (der Tod als die eigenste, unbezügliche Möglichkeit) charakterisiert ist. Eigentlichkeit bedeutet, die eigene Endlichkeit anzunehmen und nicht im »Man« der Alltäglichkeit zu verschwinden.</div>
+                        <div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div>
+                    </div>
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-dates">1905–1980</div>
+                        <div class="card-name">Jean-Paul Sartre</div>
+                        <div class="card-concept">Freiheit · Existenz</div>
+                        <div class="card-desc">»Existenz geht der Essenz voraus.« Zur Freiheit verurteilt.</div>
+                        <div class="card-expand">Sartre radikalisierte den Existenzialismus: <em>»Die Existenz geht der Essenz voraus.«</em> Es gibt keine vorgegebene menschliche Natur, keinen göttlichen Plan. Wir sind <strong>zur Freiheit verurteilt</strong> und müssen uns selbst entwerfen. Diese Freiheit ist total – und damit auch die <strong>Verantwortung</strong>. <em>»Der Mensch ist nichts anderes als das, wozu er sich macht.«</em> In seinem Drama <em>Geschlossene Gesellschaft</em> prägte er den berühmten Satz: <em>»Die Hölle, das sind die anderen.«</em></div>
+                        <div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="group">
+                <div class="group-label">Kritische Theorie & Poststrukturalismus</div>
+                <div class="cards">
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-dates">1903–1969</div>
+                        <div class="card-name">Theodor W. Adorno</div>
+                        <div class="card-concept">Kritische Theorie</div>
+                        <div class="card-desc">Aufklärung schlug in Barbarei um. Kulturindustrie.</div>
+                        <div class="card-expand">Adorno und Horkheimer zeigten in der <em>Dialektik der Aufklärung</em>, wie die <strong>instrumentelle Vernunft</strong> in ihr Gegenteil umschlagen kann: Die Aufklärung, die den Menschen aus der Unmündigkeit befreien sollte, führte zur technischen Beherrschung der Natur – und zur industriellen Vernichtung von Menschen in Auschwitz. Adornos <strong>Kulturindustriekritik</strong> analysiert, wie Massenkultur das Bewusstsein standardisiert und kritische Impulse erstickt. Sein berühmtes Diktum: <em>»Nach Auschwitz ein Gedicht zu schreiben, ist barbarisch.«</em></div>
+                        <div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div>
+                    </div>
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-dates">1926–1984</div>
+                        <div class="card-name">Michel Foucault</div>
+                        <div class="card-concept">Macht · Diskurs</div>
+                        <div class="card-desc">Macht ist überall – in Institutionen, Wissen, Sprache.</div>
+                        <div class="card-expand">Foucault revolutionierte das Verständnis von <strong>Macht</strong>: Sie ist keine Substanz, die jemand besitzt, sondern ein <strong>produktives Netz</strong>, das Beziehungen, Wissen und Subjekte hervorbringt. In <em>Überwachen und Strafen</em> analysiert er das <strong>Panoptikum</strong> als Symbol der modernen Disziplinargesellschaft. <strong>Diskurse</strong> bestimmen, was zu einer bestimmten Zeit als wahr gilt. Auch der Wahnsinn, die Sexualität und das Gefängnis sind historisch geformte Konstrukte.</div>
+                        <div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div>
+                    </div>
+                    <div class="card" onclick="toggleCard(this)">
+                        <div class="card-dates">1930–2004</div>
+                        <div class="card-name">Jacques Derrida</div>
+                        <div class="card-concept">Dekonstruktion</div>
+                        <div class="card-desc">Bedeutung ist nie stabil. Texte enthalten innere Widersprüche.</div>
+                        <div class="card-expand">Derrida zeigte mit der <strong>Dekonstruktion</strong>, dass Texte nie eine stabile, endgültige Bedeutung haben. Sein Schlüsselbegriff <strong>Différance</strong> (ein Kunstwort aus <em>différer</em> – unterscheiden und aufschieben) beschreibt, wie Sinn ständig verschoben wird und nie zu einem endgültigen Abschluss kommt. Jede Philosophie, die auf einem scheinbar festen Fundament ruht, enthält <strong>innere Widersprüche</strong>, die dieses Fundament untergraben. Dekonstruktion ist keine willkürliche Zerstörung, sondern eine präzise, genaue Lektüre.</div>
+                        <div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <!-- ===================== POSTMODERNE ===================== -->
-    <section class="section postmoderne" id="postmoderne">
-      <div class="section-header"><div class="section-title">Postmoderne</div><div class="section-years">ab ca. 1945</div></div>
-      <div class="overview-bar">Vertrauen in Vernunft und große Erzählungen ist erschüttert. Sprache, Macht, das Subjekt selbst werden hinterfragt.</div>
-      <div class="group">
-        <div class="group-label">Existenzphilosophie</div>
-        <div class="cards">
-          <div class="card" onclick="toggleCard(this)"><div class="card-dates">1889–1976</div><div class="card-name">Martin Heidegger</div><div class="card-concept">Sein · Dasein</div><div class="card-desc">Frage nach dem Sinn des Seins. Dasein ist in die Welt geworfen.</div><div class="card-expand">Sein und Zeit. Eigentlichkeit durch Annahme des Todes.</div><div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div></div>
-          <div class="card" onclick="toggleCard(this)"><div class="card-dates">1905–1980</div><div class="card-name">Jean-Paul Sartre</div><div class="card-concept">Freiheit · Existenz</div><div class="card-desc">»Existenz geht der Essenz voraus.« Zur Freiheit verurteilt.</div><div class="card-expand">Volle Verantwortung für unsere Wahl. »Die Hölle – das sind die anderen.«</div><div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div></div>
-        </div>
-      </div>
-      <div class="group">
-        <div class="group-label">Kritische Theorie & Poststrukturalismus</div>
-        <div class="cards">
-          <div class="card" onclick="toggleCard(this)"><div class="card-dates">1903–1969</div><div class="card-name">Theodor W. Adorno</div><div class="card-concept">Kritische Theorie</div><div class="card-desc">Aufklärung schlug in Barbarei um. Kulturindustrie.</div><div class="card-expand">Dialektik der Aufklärung. »Nach Auschwitz ein Gedicht…«</div><div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div></div>
-          <div class="card" onclick="toggleCard(this)"><div class="card-dates">1926–1984</div><div class="card-name">Michel Foucault</div><div class="card-concept">Macht · Diskurs</div><div class="card-desc">Macht ist überall – in Institutionen, Wissen, Sprache.</div><div class="card-expand">Überwachen und Strafen. Wahrheit ist historisch und machtgebunden.</div><div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div></div>
-          <div class="card" onclick="toggleCard(this)"><div class="card-dates">1930–2004</div><div class="card-name">Jacques Derrida</div><div class="card-concept">Dekonstruktion</div><div class="card-desc">Bedeutung ist nie stabil. Texte enthalten innere Widersprüche.</div><div class="card-expand">Différance – Verschiebung und Differenz. Dekonstruktion als Methode.</div><div class="card-toggle"><span class="card-toggle-more">Mehr lesen ↓</span><span class="card-toggle-less">Weniger ↑</span></div></div>
-        </div>
-      </div>
-    </section>
+    <footer>
+        Erstellt für den Pfadfindertrupp · Philosophie Abzeichen · Alle Angaben zum Selbststudium · Erweitert um philosophische Strömungen
+    </footer>
 
-  </main>
+    <script>
+        const eraButtons = document.querySelectorAll('.era-btn');
+        const sections = document.querySelectorAll('.section');
+        const timelineSegments = document.querySelectorAll('.timeline-segment');
+        const timelineLabels = document.querySelectorAll('.timeline-label');
 
-  <footer>
-    Erstellt für den Pfadfindertrupp · Philosophie Abzeichen · Alle Angaben zum Selbststudium
-  </footer>
+        function setActiveEra(era) {
+            sections.forEach(s => s.classList.remove('active'));
+            document.getElementById(era).classList.add('active');
+            eraButtons.forEach(b => {
+                b.classList.remove('active');
+                if (b.dataset.era === era) b.classList.add('active');
+            });
+            timelineSegments.forEach(seg => {
+                seg.classList.remove('active');
+                if (seg.dataset.era === era) seg.classList.add('active');
+            });
+            timelineLabels.forEach(label => {
+                label.classList.remove('active');
+                if (label.dataset.era === era) label.classList.add('active');
+            });
+        }
 
-  <script>
-    const eraButtons = document.querySelectorAll('.era-btn');
-    const sections = document.querySelectorAll('.section');
-    const timelineSegments = document.querySelectorAll('.timeline-segment');
-    const timelineLabels = document.querySelectorAll('.timeline-label');
+        eraButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const era = btn.dataset.era;
+                setActiveEra(era);
+                window.scrollTo({ top: document.getElementById(era).offsetTop - 180, behavior: 'smooth' });
+            });
+        });
 
-    function setActiveEra(era) {
-      // Update sections
-      sections.forEach(s => s.classList.remove('active'));
-      document.getElementById(era).classList.add('active');
+        timelineSegments.forEach(seg => {
+            seg.addEventListener('click', () => {
+                const era = seg.dataset.era;
+                setActiveEra(era);
+                window.scrollTo({ top: document.getElementById(era).offsetTop - 180, behavior: 'smooth' });
+            });
+        });
 
-      // Update era buttons
-      eraButtons.forEach(b => {
-        b.classList.remove('active');
-        if (b.dataset.era === era) b.classList.add('active');
-      });
+        timelineLabels.forEach(label => {
+            label.addEventListener('click', () => {
+                const era = label.dataset.era;
+                setActiveEra(era);
+                window.scrollTo({ top: document.getElementById(era).offsetTop - 180, behavior: 'smooth' });
+            });
+        });
 
-      // Update timeline segments
-      timelineSegments.forEach(seg => {
-        seg.classList.remove('active');
-        if (seg.dataset.era === era) seg.classList.add('active');
-      });
-
-      // Update timeline labels
-      timelineLabels.forEach(label => {
-        label.classList.remove('active');
-        if (label.dataset.era === era) label.classList.add('active');
-      });
-    }
-
-    // Event Listeners für Era-Buttons
-    eraButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const era = btn.dataset.era;
-        setActiveEra(era);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    });
-
-    // Event Listeners für Timeline-Segmente (farbige Balken)
-    timelineSegments.forEach(seg => {
-      seg.addEventListener('click', () => {
-        const era = seg.dataset.era;
-        setActiveEra(era);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    });
-
-    // Event Listeners für Timeline-Labels (Text unter dem Balken)
-    timelineLabels.forEach(label => {
-      label.addEventListener('click', () => {
-        const era = label.dataset.era;
-        setActiveEra(era);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    });
-
-    // Card Toggle
-    function toggleCard(card) {
-      card.classList.toggle('open');
-    }
-  </script>
+        function toggleCard(card) {
+            card.classList.toggle('open');
+        }
+    </script>
 </body>
 </html>
